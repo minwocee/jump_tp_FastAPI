@@ -1,8 +1,9 @@
+# 테이블 저장소
 from sqlalchemy import Column, Integer, String, Text, DateTime, TupleType, JSON, Boolean, ForeignKey
 from sqlalchemy.orm import relationship
 from database import Base
 
-
+# 유저
 class User(Base):
     __tablename__ = 'user'
     
@@ -14,7 +15,7 @@ class User(Base):
     is_admin = Column(Boolean, nullable=False, default=False)
     games = Column(JSON, nullable=True)
     
-
+# 게임
 class Game(Base):
     __tablename__ = 'game'
     
@@ -32,7 +33,7 @@ class Game(Base):
     
     user = relationship("User", backref="game")
     
-
+# 전공
 class Major(Base):
     __tablename__ = 'major'
     

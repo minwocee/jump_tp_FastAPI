@@ -7,6 +7,7 @@ import models
 from database import engine
 from starlette.middleware.cors import CORSMiddleware
 from starlette.middleware.sessions import SessionMiddleware
+import uvicorn
 
 app = FastAPI()
 app.add_middleware(SessionMiddleware, secret_key="iip5eJeoBlpcWFBwv49urb10j6bITMDWmNhxfRIe")
@@ -30,3 +31,10 @@ app.include_router(auth_router.router)
 app.include_router(user_router.router)
 # app.include_router(game_router.router)
 # app.include_router(major_router.router)
+
+
+# python main.py하면 바로 실행됨
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
+
+

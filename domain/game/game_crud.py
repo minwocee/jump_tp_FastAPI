@@ -1,3 +1,4 @@
+# DB에 실질적인 처리 부분
 from models import Game
 from sqlalchemy.orm import Session
 
