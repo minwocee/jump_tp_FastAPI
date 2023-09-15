@@ -19,7 +19,7 @@ print(DB_URL)
 # print(DB_URL)
 
 engine = create_engine(DB_URL)
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)    #  asd
 
 def get_db() -> Session:
     db = SessionLocal()
